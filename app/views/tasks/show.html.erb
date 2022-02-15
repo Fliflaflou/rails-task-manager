@@ -1,0 +1,17 @@
+<h1>Show Sing-Task</h1>
+<h2><%= @task.title %></h2>
+<p><%= @task.details %></p>
+<p>Etat</p>
+<% if @task.completed == true %>
+<p>done</p>
+<% else %>
+<p>À faire</p>
+<% end %>
+
+<%= link_to "Delete #{@task.title}",
+            task_path(@task),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+
+<%= link_to "retour à la liste", tasks_path %>
+<%= link_to "edit", task_edit_path %>
